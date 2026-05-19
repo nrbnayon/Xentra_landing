@@ -385,12 +385,19 @@ function HeroSection() {
 
           {/* CTA buttons */}
           <div className="flex flex-wrap gap-4 items-center">
-            <button className="bg-white text-[#16467a] font-medium text-base px-8 py-3 rounded-lg hover:bg-white/90 transition-colors">
+            <a
+              href="/Xentra%20Sports.apk"
+              download
+              className="bg-white text-[#16467a] font-medium text-base px-8 py-3 rounded-lg hover:bg-white/90 transition-colors inline-block text-center"
+            >
               {translate("Predict Now")}
-            </button>
-            <button className="border border-white/30 text-white font-medium text-base px-8 py-3 rounded-lg hover:bg-white/10 transition-colors">
+            </a>
+            <a
+              href="#about"
+              className="border border-white/30 text-white font-medium text-base px-8 py-3 rounded-lg hover:bg-white/10 transition-colors inline-block text-center"
+            >
               {translate("Learn More")}
-            </button>
+            </a>
           </div>
         </div>
       </div>
