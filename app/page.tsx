@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 // ── Asset URLs from Figma ──────────────────────────────────────────────────
@@ -221,9 +222,8 @@ function Navbar() {
           </div>
 
           <a
-            href="https://drive.google.com/file/d/1U0z4GXyRDP7a8t-FZIoWfYPFmwT9v7pB/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/Xentra%20Sports.apk"
+            download
             className="bg-white text-[#16467a] font-medium text-base px-7 py-2.5 rounded-lg hover:bg-white/90 transition-colors"
           >
             {translate("Install Now")}
@@ -283,9 +283,8 @@ function Navbar() {
               ))}
             </div>
             <a
-              href="https://drive.google.com/file/d/1U0z4GXyRDP7a8t-FZIoWfYPFmwT9v7pB/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/Xentra%20Sports.apk"
+              download
               className="bg-white text-[#16467a] font-medium text-base px-7 py-2.5 rounded-lg text-center"
             >
               {translate("Install Now")}
@@ -476,7 +475,7 @@ function AboutSection() {
 
 // ── Contact Section ────────────────────────────────────────────────────────
 function ContactSection() {
-  const { translate, language } = useLanguage();
+  const { translate } = useLanguage();
   const [email, setEmail] = useState("");
 
   const socialIcons = [
