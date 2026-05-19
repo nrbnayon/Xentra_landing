@@ -47,7 +47,7 @@ module.exports = {
   deploy: {
     production: {
       user: "root",
-      host: "xentrasports.com",
+      host: "68.183.29.90",
       ref: "origin/main",
       repo: "https://github.com/nrbnayon/Xentra_landing.git",
       path: "/var/www/Xentra_landing",
