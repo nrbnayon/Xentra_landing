@@ -331,10 +331,12 @@ function HeroSection() {
           {/* Headline */}
           <div className="flex flex-col gap-4">
             <h1 className="font-semibold text-4xl sm:text-5xl md:text-[48px] text-white leading-tight">
-              {translate("EXPERIENCE")}{" "}
-              <span className="text-[#f3b530]">{translate("SPORTS")} </span>
+              {translate("hero experience") === "hero experience" ? "EXPERIENCE" : translate("hero experience")}{" "}
+              <span className="text-[#f3b530]">
+                {translate("hero sports") === "hero sports" ? "SPORTS" : translate("hero sports")}{" "}
+              </span>
               <br />
-              {translate("LIKE NEVER BEFORE")}
+              {translate("hero like never before") === "hero like never before" ? "LIKE NEVER BEFORE" : translate("hero like never before")}
             </h1>
             <p className="text-[#c8c7c7] text-base leading-relaxed max-w-[536px]">
               {translate("Join thousands of users enjoying live match updates, secure transactions, and an immersive sports experience designed for every fan.")}
