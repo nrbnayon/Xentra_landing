@@ -90,6 +90,7 @@ const MANUAL_GLOSSARY: StorageCache = {
       "Antre ansanm ak plizyè milye itilizatè k ap jwi mizajou match an dirèk, tranzaksyon sekirize, ak yon eksperyans espòtif immersif ki fèt pou tout fanatik yo.",
     "10k+ users": "Plis pase 10k itilizatè",
     users: "Itilizatè yo",
+    matches: "Match yo",
     "enjoy a seamless sports experience with advanced analytics, secure payments, and real-time match tracking designed to keep you ahead of the game.":
       "Jwi yon eksperyans espòtif san pwoblèm ak analiz avanse, peman sekirize, ak swivi match an tan reyèl ki fèt pou kenbe ou devan jwèt la.",
     "predict now": "Fè prediksyon kounye a",
@@ -169,7 +170,7 @@ const MANUAL_GLOSSARY: StorageCache = {
       "Entrez votre email pour recevoir les mises à jour",
     "send message": "Envoyer le message",
     "all rights reserved.": "Tous droits réservés.",
-    "privacy policy": "Politique de confidentialité",
+    "privacy policy": "Règleman sou enfòmasyon prive",
     "terms of service": "Conditions d’utilisation",
     "powered by travex llc": "Propulsé par Travex LLC",
   },
