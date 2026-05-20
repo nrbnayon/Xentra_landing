@@ -266,16 +266,31 @@ class TranslationService {
     return text.toLowerCase().trim().replace(/\s+/g, " ");
   }
 
+  private normalizeLang(lang: string): string {
+    if (!lang) return "";
+    return lang.split("-")[0];
+  }
+
   private memGet(lang: string, text: string): string | undefined {
     const key = this.normalize(text);
-    const manual = MANUAL_GLOSSARY[lang]?.[key];
-    if (manual) return manual;
-    return this.mem[lang]?.[key];
+    const primary = this.normalizeLang(lang);
+
+    const manualExact = MANUAL_GLOSSARY[lang]?.[key];
+    if (manualExact) return manualExact;
+
+    const manualPrimary = MANUAL_GLOSSARY[primary]?.[key];
+    if (manualPrimary) return manualPrimary;
+
+    const memExact = this.mem[lang]?.[key];
+    if (memExact) return memExact;
+
+    return this.mem[primary]?.[key];
   }
 
   private memSet(lang: string, text: string, translation: string): void {
-    if (!this.mem[lang]) this.mem[lang] = {};
-    this.mem[lang][this.normalize(text)] = translation;
+    const primary = this.normalizeLang(lang);
+    if (!this.mem[primary]) this.mem[primary] = {};
+    this.mem[primary][this.normalize(text)] = translation;
   }
 
   private persistDebounceTimer: ReturnType<typeof setTimeout> | null = null;

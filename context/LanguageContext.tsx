@@ -10,6 +10,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 
@@ -68,6 +69,19 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [tick, setTick] = useState(0);
 
   const rerender = useCallback(() => setTick((n) => n + 1), []);
+  const rerenderTimer = useRef<number | null>(null);
+
+  const scheduleRerender = useCallback(() => {
+    if (rerenderTimer.current) return;
+    // Batch rerenders so a flood of translation completions only causes one render
+    rerenderTimer.current = window.setTimeout(() => {
+      rerender();
+      if (rerenderTimer.current) {
+        clearTimeout(rerenderTimer.current);
+        rerenderTimer.current = null;
+      }
+    }, 50) as unknown as number;
+  }, [rerender]);
 
   useEffect(() => {
     (async () => {
@@ -100,7 +114,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
       translationService
         .translate(text, language)
-        .then(() => rerender())
+        .then(() => scheduleRerender())
         .catch(() => {});
 
       return text;
@@ -154,7 +168,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             .translateBatch(common, code)
             .then(() => {
               log(`Pre-warm complete for [${code}]`);
-              rerender();
+              scheduleRerender();
             })
             .catch(() => {});
         }
