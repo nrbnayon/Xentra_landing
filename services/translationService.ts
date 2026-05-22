@@ -59,7 +59,7 @@ const MANUAL_GLOSSARY: StorageCache = {
     "all rights reserved.": "สงวนลิขสิทธิ์",
     "privacy policy": "นโยบายความเป็นส่วนตัว",
     "terms of service": "ข้อกำหนดการให้บริการ",
-    "powered by travex llc": "ขับเคลื่อนโดย Travex LLC",
+    "powered by travex llc": "Powered by Travex LLC",
     "real-time experience": "ประสบการณ์เรียลไทม์",
     "smart predictions": "การพยากรณ์อัจฉริยะ",
     "global competition": "การแข่งขันระดับโลก",
@@ -170,9 +170,9 @@ const MANUAL_GLOSSARY: StorageCache = {
       "Entrez votre email pour recevoir les mises à jour",
     "send message": "Envoyer le message",
     "all rights reserved.": "Tous droits réservés.",
-    "privacy policy": "Règleman sou enfòmasyon prive",
+    "privacy policy": "Politique de confidentialité",
     "terms of service": "Conditions d’utilisation",
-    "powered by travex llc": "Propulsé par Travex LLC",
+    "powered by travex llc": "Powered by Travex LLC",
   },
   es: {
     home: "Inicio",
@@ -223,7 +223,7 @@ const MANUAL_GLOSSARY: StorageCache = {
     "all rights reserved.": "Todos los derechos reservados.",
     "privacy policy": "Política de privacidad",
     "terms of service": "Términos del servicio",
-    "powered by travex llc": "Desarrollado por Travex LLC",
+    "powered by travex llc": "Powered by Travex LLC",
   },
 };
 
