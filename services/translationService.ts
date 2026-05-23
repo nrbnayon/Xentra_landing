@@ -125,6 +125,7 @@ const MANUAL_GLOSSARY: StorageCache = {
   },
   fr: {
     home: "Accueil",
+    hello: "Hello",
     about: "À propos",
     contact: "Contact",
     "download the app now": "Téléchargez l’application maintenant",
