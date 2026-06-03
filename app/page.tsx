@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { QRCodeSVG } from "qrcode.react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
 interface FeatureCardProps {
@@ -245,6 +247,14 @@ function Navbar() {
 // ── Hero Section ───────────────────────────────────────────────────────────
 function HeroSection() {
   const { translate } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const downloadUrl = mounted ? window.location.origin + "/Xentra%20Sports.apk" : "";
+
   return (
     <section
       id="home"
@@ -273,7 +283,8 @@ function HeroSection() {
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col justify-center pt-28 pb-60 md:pb-52 px-6 sm:px-10 lg:px-[100px] max-w-[1440px] mx-auto w-full">
-        <div className="flex flex-col gap-8 max-w-[637px]">
+       <div className="flex justify-between item-center"> 
+         <div className="flex flex-col gap-8 max-w-[637px]">
           {/* Headline */}
           <div className="flex flex-col gap-4">
             <h1 className="font-semibold text-4xl sm:text-5xl md:text-[48px] text-white leading-tight">
@@ -288,6 +299,8 @@ function HeroSection() {
               {translate("Join thousands of users enjoying live match updates, secure transactions, and an immersive sports experience designed for every fan.")}
             </p>
           </div>
+
+        
 
           {/* User avatars + description */}
           <div className="flex flex-col gap-6">
@@ -336,7 +349,7 @@ function HeroSection() {
             <a
               href="/Xentra%20Sports.apk"
               download
-              className="bg-white text-[#16467a] font-medium text-base px-8 py-3 rounded-lg hover:bg-white/90 transition-colors inline-block text-center"
+              className="bg-white text-[#16467a] font-medium text-base px-8 py-3 rounded-lg hover:bg-white/90 transition-colors inline-block text-center shadow-lg"
             >
               {translate("Predict Now")}
             </a>
@@ -348,6 +361,38 @@ function HeroSection() {
             </a>
           </div>
         </div>
+
+                  {/* Prominent QR Code for Desktop */}
+          {mounted && (
+            <div className="hidden lg:flex mt-4 items-center gap-6 p-5 rounded-2xl border border-white/10 shadow-2xl max-w-fit">
+              <div className="bg-white p-3 rounded-xl shadow-inner shrink-0">
+                <QRCodeSVG
+                  value={downloadUrl}
+                  size={120}
+                  bgColor={"#ffffff"}
+                  fgColor={"#0d2947"}
+                  level={"H"}
+                  imageSettings={{
+                    src: "/logo.svg",
+                    x: undefined,
+                    y: undefined,
+                    height: 28,
+                    width: 28,
+                    excavate: true,
+                  }}
+                />
+              </div>
+              <div className="flex flex-col gap-2 max-w-[200px]">
+                <p className="text-white font-bold text-xl leading-tight">{translate("Scan to Download")}</p>
+                <p className="text-[#dedede] text-[14px] leading-relaxed">{translate("Get the Xentra Sports Android app instantly on your phone.")}</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-white/80 text-xs font-medium uppercase tracking-wider">Fast & Secure</span>
+                </div>
+              </div>
+            </div>
+          )}
+       </div>
       </div>
 
       {/* Stats bar */}
