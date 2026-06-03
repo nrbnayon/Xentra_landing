@@ -4,60 +4,6 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
-// ── Asset URLs from Figma ──────────────────────────────────────────────────
-const imgSoccerPlayer =
-  "https://www.figma.com/api/mcp/asset/918cdb60-a011-4f0c-b539-f5c7850d6b16";
-const imgEllipse8 =
-  "https://www.figma.com/api/mcp/asset/f8a3e341-7090-43d8-8b0c-34039e7ceb0c";
-const imgEllipse9 =
-  "https://www.figma.com/api/mcp/asset/8cac4461-1be4-427c-b78f-711a7ef10af7";
-const imgEllipse10 =
-  "https://www.figma.com/api/mcp/asset/59fea3fd-27c0-45b2-9829-240b45baa54f";
-const imgEllipse11 =
-  "https://www.figma.com/api/mcp/asset/eac2b2d3-4339-4580-9cd0-70e04223f078";
-const imgEllipse12 =
-  "https://www.figma.com/api/mcp/asset/8939684d-0e41-46c8-a03a-d217533a62e7";
-const imgEllipse13 =
-  "https://www.figma.com/api/mcp/asset/7a39868f-bd66-4b88-aca0-917cb3341ade";
-const imgBg =
-  "https://www.figma.com/api/mcp/asset/0ad6af36-a7ee-415d-82e0-0bc8e7e647cc";
-const imgFootballPattern =
-  "https://www.figma.com/api/mcp/asset/d45445ea-775d-4211-a137-445a7f3950d0";
-const imgEllipse14 =
-  "https://www.figma.com/api/mcp/asset/7a7241c9-0de1-4785-b53e-af4ebe391759";
-const imgArrowUp =
-  "https://www.figma.com/api/mcp/asset/f345c3d6-0e48-4ffa-9a3a-2c6fde3a09ae";
-const imgPowerIcon =
-  "https://www.figma.com/api/mcp/asset/b3ee1d29-1986-4eda-873e-735754ee11ae";
-const imgBrainIcon =
-  "https://www.figma.com/api/mcp/asset/8c81ca0a-82a0-4e4f-9c33-77ab39c857cc";
-const imgGlobeIcon =
-  "https://www.figma.com/api/mcp/asset/624b1239-9b18-4153-9273-61978be72a74";
-const imgSecurityIcon =
-  "https://www.figma.com/api/mcp/asset/dbdf14b4-75b6-4b3a-9e93-28aef94746b6";
-const imgContactLogo =
-  "https://www.figma.com/api/mcp/asset/bb3b3cb7-34c3-4ca9-8209-f6fd30e46e6a";
-const imgFacebook =
-  "https://www.figma.com/api/mcp/asset/9687b851-3163-4847-abe2-edf6efbe8793";
-const imgInstagram =
-  "https://www.figma.com/api/mcp/asset/ffdd88f6-462f-47c9-a22c-78b3b5a5546a";
-const imgTwitter =
-  "https://www.figma.com/api/mcp/asset/13d79f54-207a-4c02-9742-7e10e01f097b";
-const imgTwitterBg =
-  "https://www.figma.com/api/mcp/asset/bd89d0e9-49d3-4622-af3a-8952eeea0e81";
-const imgTiktok =
-  "https://www.figma.com/api/mcp/asset/936e0de9-28a5-4d36-929b-0b87990a1745";
-const imgEmailIcon =
-  "https://www.figma.com/api/mcp/asset/9dd522e0-3c1b-4908-9268-28549107e8ed";
-const imgPhoneIcon =
-  "https://www.figma.com/api/mcp/asset/cac8c9b9-a1fa-4279-80a5-4f7b6539e955";
-const imgCopyrightIcon =
-  "https://www.figma.com/api/mcp/asset/c855e46d-3096-474e-b5ef-5a6d57de08db";
-const imgLogo =
-  "https://www.figma.com/api/mcp/asset/cdb9dd97-15ac-47d4-bc4b-7800b7e2473b";
-const imgChevronDown =
-  "https://www.figma.com/api/mcp/asset/ba100aba-49e7-4f59-a6b0-ba35b66ea324";
-
 // ── Types ──────────────────────────────────────────────────────────────────
 interface FeatureCardProps {
   iconSrc: string;
@@ -198,7 +144,7 @@ function Navbar() {
               className="border border-white/30 text-white font-medium text-base px-6 py-2.5 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-colors"
             >
               {currentLanguage.nativeName}
-              <img src={imgChevronDown} alt="" className={`w-4 h-3.5 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+              <img src="/down.svg" alt="" className={`w-4 h-3.5 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
             </button>
             
             {langOpen && (
@@ -306,7 +252,7 @@ function HeroSection() {
     >
       {/* Background */}
       <img
-        src={imgBg}
+        src='/background.png'
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -369,13 +315,13 @@ function HeroSection() {
             <div className="flex items-center gap-4 max-w-[461px]">
               <div className="flex items-center shrink-0">
                 <div className="w-[52px] h-[52px] rounded-full overflow-hidden -mr-10">
-                  <img src={imgEllipse14} alt="" className="w-full h-full object-cover" />
+                  <img src="/circle.svg" alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="bg-[#25a5c4] w-[52px] h-[52px] rounded-full flex items-center justify-center shrink-0">
                   <img
-                    src={imgArrowUp}
+                    src="/arrow-up-linear.svg"
                     alt=""
-                    className="w-8 h-8 rotate-[43deg]"
+                    className="w-8 h-8"
                   />
                 </div>
               </div>
@@ -423,28 +369,28 @@ function AboutSection() {
   const { translate } = useLanguage();
   const features: FeatureCardProps[] = [
     {
-      iconSrc: imgPowerIcon,
+      iconSrc: "/power.svg",
       iconBg: "bg-[#f3b530]",
       title: "REAL-TIME\nEXPERIENCE",
       description:
         "Stay updated with real-time scores, stats, and match highlights.",
     },
     {
-      iconSrc: imgBrainIcon,
+      iconSrc: "/brain.svg",
       iconBg: "bg-[#16467a]",
       title: "SMART\nPREDICTIONS",
       description:
         "Compete in live predictions and test your knowledge against fans worldwide.",
     },
     {
-      iconSrc: imgGlobeIcon,
+      iconSrc: "/globe.svg",
       iconBg: "bg-[#f3b530]",
       title: "GLOBAL\nCOMPETITION",
       description:
         "Play, compete, and climb the leaderboards across the world.",
     },
     {
-      iconSrc: imgSecurityIcon,
+      iconSrc: "/security.svg",
       iconBg: "bg-[#16467a]",
       title: "SECURE &\nFAIR",
       description:
@@ -489,12 +435,12 @@ function ContactSection() {
 
   const socialIcons = [
     {
-      src: imgFacebook,
+      src: '/facebook.svg',
       alt: "Facebook",
       href: "https://www.facebook.com/profile.php?id=61580775195702",
     },
     {
-      src: imgInstagram,
+      src: "/insta.svg",
       alt: "Instagram",
       href: "https://www.instagram.com/playxentra",
     },
@@ -505,7 +451,7 @@ function ContactSection() {
       isX: true,
     },
     {
-      src: imgTiktok,
+      src: "/tiktok.svg",
       alt: "TikTok",
       href: "https://www.tiktok.com/@playxentra",
     },
@@ -566,7 +512,7 @@ function ContactSection() {
           {/* Middle: Email */}
           <div className="flex flex-col items-center justify-center gap-5 px-8 py-6 border-b md:border-b-0 md:border-r border-white text-center">
             <div className="bg-[#16467a] border-[1.25px] border-[#1c5898] shadow-[0px_0px_28px_rgba(101,101,101,0.18)] w-10 h-10 rounded-[20px] flex items-center justify-center">
-              <img src={imgEmailIcon} alt="" className="w-6 h-6" />
+              <img src="/email.svg" alt="" className="w-6 h-6" />
             </div>
             <div className="flex flex-col gap-5">
               <p className="font-semibold text-[#242424] text-xl">Email</p>
@@ -583,7 +529,7 @@ function ContactSection() {
           <div className="flex flex-col gap-6 px-8 py-6">
             <div className="flex items-center gap-3">
               <div className="bg-[#16467a] border-[1.25px] border-[#1c5898] shadow-[0px_0px_28px_rgba(101,101,101,0.18)] w-10 h-10 rounded-[20px] flex items-center justify-center shrink-0">
-                <img src={imgPhoneIcon} alt="" className="w-6 h-6" />
+                <img src="/phone.svg" alt="" className="w-6 h-6" />
               </div>
               <p className="font-semibold text-[#242424] text-xl whitespace-nowrap">
                 {translate("Get Updates")}
@@ -608,7 +554,7 @@ function ContactSection() {
         {/* Footer bar */}
         <div className="flex flex-wrap justify-center gap-6 md:gap-[110px] items-center">
           <div className="flex items-center gap-1.5">
-            <img src={imgCopyrightIcon} alt="" className="w-[18px] h-[18px]" />
+            <img src="/copyright.svg" alt="" className="w-[18px] h-[18px]" />
             <span className="text-[#dbdbdb] text-base text-center">
               2026 Xentra Sports. {translate("All rights reserved.")}
             </span>
