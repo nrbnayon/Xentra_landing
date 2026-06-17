@@ -351,7 +351,15 @@ function HeroSection() {
               download
               className="bg-white text-[#16467a] font-medium text-base px-8 py-3 rounded-lg hover:bg-white/90 transition-colors inline-block text-center shadow-lg"
             >
-              {translate("Predict Now")}
+              {translate("Android APK")}
+            </a>
+            <a
+              href="https://testflight.apple.com/join/BA5xQ25p"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-[#16467a] font-medium text-base px-8 py-3 rounded-lg hover:bg-white/90 transition-colors inline-block text-center shadow-lg"
+            >
+              {translate("iOS TestFlight")}
             </a>
             <a
               href="#about"
